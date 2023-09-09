@@ -3,6 +3,7 @@ import React from 'react'
 function Details(props) {
     return (
         <div className='container py-5' ><div className="accordion accordion-flush" id="accordionFlushExample" >
+            <h1 className={`text-center text-${props.mode === 'dark' ? 'white' : 'black'}`} >TextUtils-Reactjs</h1>
             <div className="card my-5" style={{ backgroundColor: props.mode === 'dark' ? '#0b3d62' : '#b2c5f4', color: props.mode === 'dark' ? 'white' : 'black' }}>
                 <div className="card-body">
                     The first React website I created was a simple analysis tool. Leveraging React's component architecture, I designed a user-friendly interface for inputting and analyzing textual data. Utilizing useState and useEffect hooks, I managed the data and performed real-time analysis, such as word count or sentiment analysis. This project showcased React's power in building dynamic, data-driven web applications and marked the beginning of my journey into web development.
