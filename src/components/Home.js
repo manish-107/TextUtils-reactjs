@@ -107,14 +107,27 @@ export default function Home(props) {
         </div>
 
 
+        <div className="container fw-semibold grid gap-0 row-gap-3 my-5">
+          <div className="row p-2 g-col-6">
 
-        <p className='my-3'>
-          Words : {text.split(/\s+/).filter(Boolean).length}
-          {/* filter(Boolean) method to remove any empty strings from the array, as consecutive spaces might create empty strings. */}
+            <div className="col">Number of Words:</div>
+            <div className="col">{text.split(/\s+/).filter(Boolean).length}</div>
+            {/* filter(Boolean) method to remove any empty strings from the array, as consecutive spaces might create empty strings. */}
 
-          <span> Characters : {text.replace(/[\n ]/g, '').length}</span>
+          </div>
+          <div className="row p-2 g-col-6">
+            <div className="col">Number of Characters:</div>
+            <div className="col">{text.replace(/[\n ]/g, '').length}</div>
+            {/* filter(Boolean) method to remove any empty strings from the array, as consecutive spaces might create empty strings. */}
+          </div>
+          <div className="row p-2 g-col-6">
+            <div className="col">Number of Spaces:</div>
+            <div className="col">{text.split(" ").length - 1}</div>
+          </div>
 
-        </p>
+        </div>
+
+
         <div className="card my-4" >
           <div className="card-body" style={{ backgroundColor: props.mode === 'dark' ? '#0b1a25' : '#b2c5f4', color: props.mode === 'dark' ? 'white' : 'black' }}>
             Preview
