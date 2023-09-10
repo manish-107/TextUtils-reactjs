@@ -15,7 +15,16 @@ export default function Home(props) {
       setText(newText)
       props.showAlert("Converted to uppercase", "success");
     }
+  }
 
+  const lowerClick = () => {
+    if (text === "") {
+      props.showAlert("Enter the text", "danger")
+    } else {
+      let newText = text.toLowerCase();
+      setText(newText)
+      props.showAlert("Converted to lowercase", "success");
+    }
   }
 
   const clearText = () => {
@@ -100,7 +109,8 @@ export default function Home(props) {
           <textarea className="form-control" style={{ backgroundColor: props.mode === 'dark' ? '#0b1a25' : '#b2c5f4', color: props.mode === 'dark' ? 'white' : 'black' }} value={text} id="exampleFormControlTextarea1" onChange={textChanged} rows="10"></textarea>
         </div>
         <div className='container-sm'>
-          <button className='mx-2 btn btn-primary my-2' onClick={buttonClick}>uppercase</button>
+          <button className='mx-2 btn btn-primary my-2' onClick={lowerClick}>Uppercase</button>
+          <button className='mx-2 btn btn-primary my-2' onClick={buttonClick}>Lowercase</button>
           <button className='mx-2 btn btn-primary my-2' onClick={clearText}>Clear</button>
           <button className='mx-2 btn btn-primary my-2' onClick={copyText}>Copy</button>
           <button className='mx-2 btn btn-primary my-2' onClick={extraSpace}>Remove extra space</button>
@@ -124,6 +134,11 @@ export default function Home(props) {
             <div className="col">Number of Spaces:</div>
             <div className="col">{text.split(" ").length - 1}</div>
           </div>
+          <div className="row p-2 g-col-6">
+            <div className="col">Number of Digits:</div>
+            <div className="col">{text.replace(/\D/g, "").length}</div>
+          </div>
+
 
         </div>
 
